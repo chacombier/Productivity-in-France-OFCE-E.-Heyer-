@@ -12,52 +12,57 @@
 # repgen <- "Desktop/OFCE"
 repgen <- setwd("~/Users/charlottecombier/Desktop/OFCE")
 ################################################################################
-#            0. PARAMETRES                                                     #
+#                               0. PARAMETRES                                  #
 ################################################################################
 
 repo_prgm <- paste(repgen , sep = "/")
 
 ################################################################################
-#            1. PACKAGES                                                       #
+#                                  1. PACKAGES                                 #
 ################################################################################
 
 source(paste(repo_prgm, "01_packages.R" , sep = "/"))
 
 ################################################################################
-#            2. CREATION BASE EEC                                             #
+#                            2. CREATION BASE EEC                              #
 ################################################################################
 setwd("/Users/charlottecombier/")
 source(paste(repo_prgm , "02_import_data_EE.R" , sep = "/"))
 
 
 ################################################################################
-#            3. NETTOYAGE  BASE EEC                                            #
+#                              3. NETTOYAGE  BASE EEC                          #
 ################################################################################
-
 
 source(paste(repo_prgm , "03_nettoyage.R" , sep = "/"))
 
 ################################################################################
-#            4.IMPORT ET EXPORT BASES CN                                       #
+#                     4.IMPORT BASE APPRENTISSAGE DARES & DESEASON             #
 ################################################################################
 
-source(paste(repo_prgm , "04_donnees_compta_nat.R" , sep = "/"))
+source(paste(repo_prgm , "04_import_apprentissage.R" , sep = "/"))
 
 ################################################################################
-#            5.EXPORT BASES ISSUES DE L'EEC                                   #
+#                               5.IMPORTS BASE CNT                             #
 ################################################################################
 
-source(paste(repo_prgm , "05_tables_EE.R" , sep = "/"))
+source(paste(repo_prgm , "05_donnees_compta_nat_2020.R" , sep = "/"))
 
 ################################################################################
-#            6. JOINTURES BASES POUR BASE FINALE D'ANALYSE                    #
+#                           6. CREATION BASES EEC                              #
 ################################################################################
 
-source(paste(repo_prgm , "06_jointures_base_finale.R" , sep = "/"))
+source(paste(repo_prgm , "06_tables_EE.R" , sep = "/"))
 
 ################################################################################
-#                                 7. SCRIPT ECM                               #
+#                                 7. CVS                                       #
 ################################################################################
 
-source(paste(repo_prgm , "07_ECM.R" , sep = "/"))
+source(paste(repo_prgm , "07_deseason.R" , sep = "/"))
+
+################################################################################
+#                                 8. JOINTURES BASE FINALE                     #
+################################################################################
+
+source(paste(repo_prgm , "08_jointures_base_finale.R" , sep = "/"))
 
